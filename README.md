@@ -13,9 +13,21 @@ AI Resume Improver is a simple AI-based application that takes resume text as in
 3. The AI analyzes the content and improves sentence structure, wording, and professionalism.
 4. The improved resume text is displayed as output.
 
-<p>
-  <h3>Key Features </h3>
-- enhanced resume wording
-- beginner friendly
-- designed for all category users(students applying for interships,campus placements, freshers,experienced,job role shifting)
-- multiple input options </p>
+## 🎯 Key Features
+- Improves resume wording
+- Makes content more professional
+- Beginner-friendly
+- No complex training required
+- mutliple input support
+- designed for different level users ( freshers,internship,experts..etc)
+- percentage wise effectiveness score in different aspects
+
+## 🔮 Future Scope
+- Upload resume as PDF
+- Job-specific resume improvement
+- Grammar and keyword score
+- Web-based user interface
+
+## 👨‍🎓 Author
+First Year Engineering Student  
+AI Buildathon Project
