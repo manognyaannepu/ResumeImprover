@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import Login from './pages/Login';
 import Templates from './pages/Templates';
 import UserHub from './pages/UserHub';
+import TextEnhancer from './pages/TextEnhancer';
+import JobTailor from './pages/JobTailor';
 import Workspace from './pages/Workspace';
 import Layout from './components/Layout';
 
@@ -16,6 +18,8 @@ function App() {
                 <Route element={<Layout />}>
                     {/* Protected Routes */}
                     <Route path="/hub" element={<UserHub />} />
+                    <Route path="/text-enhancer" element={<TextEnhancer />} />
+                    <Route path="/job-tailor" element={<JobTailor />} />
                     <Route path="/templates" element={<Templates />} />
                     <Route path="/workspace/:id?" element={<Workspace />} />
                 </Route>

@@ -103,7 +103,10 @@ const Login = () => {
                     </Card>
 
                     {/* Tool Card 2 */}
-                    <Card className="bg-slate-950/50 border-slate-800 hover:border-purple-500/50 transition-all duration-300 group cursor-pointer hover:-translate-y-1">
+                    <Card
+                        className="bg-slate-950/50 border-slate-800 hover:border-purple-500/50 transition-all duration-300 group cursor-pointer hover:-translate-y-1"
+                        onClick={() => navigate('/text-enhancer')}
+                    >
                         <CardHeader>
                             <div className="h-12 w-12 rounded-lg bg-purple-500/10 flex items-center justify-center mb-4 group-hover:bg-purple-500 transition-colors duration-300">
                                 <CheckCircle2 className="h-6 w-6 text-purple-500 group-hover:text-white" />
@@ -121,7 +124,10 @@ const Login = () => {
                     </Card>
 
                     {/* Tool Card 3 */}
-                    <Card className="bg-slate-950/50 border-slate-800 hover:border-teal-500/50 transition-all duration-300 group cursor-pointer hover:-translate-y-1">
+                    <Card
+                        className="bg-slate-950/50 border-slate-800 hover:border-teal-500/50 transition-all duration-300 group cursor-pointer hover:-translate-y-1"
+                        onClick={() => navigate('/job-tailor')}
+                    >
                         <CardHeader>
                             <div className="h-12 w-12 rounded-lg bg-teal-500/10 flex items-center justify-center mb-4 group-hover:bg-teal-500 transition-colors duration-300">
                                 <FileText className="h-6 w-6 text-teal-500 group-hover:text-white" />
