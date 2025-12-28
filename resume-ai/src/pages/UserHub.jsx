@@ -12,10 +12,12 @@ const UserHub = () => {
         <div className="min-h-screen container mx-auto px-4 py-8 animate-in fade-in duration-500">
             {/* Top Left Options */}
             <div className="flex gap-4 mb-12">
-                <Button variant="ghost" className="text-slate-400 hover:text-white flex items-center gap-2">
+                <Button variant="ghost" className="text-slate-400 hover:text-white flex items-center gap-2"
+                    onClick={() => navigate('/profile')}>
                     <User className="h-5 w-5" /> Profile
                 </Button>
-                <Button variant="ghost" className="text-slate-400 hover:text-white flex items-center gap-2">
+                <Button variant="ghost" className="text-slate-400 hover:text-white flex items-center gap-2"
+                    onClick={() => navigate('/settings')}>
                     <Settings className="h-5 w-5" /> Settings
                 </Button>
             </div>

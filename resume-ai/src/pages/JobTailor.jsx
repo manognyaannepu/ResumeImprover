@@ -9,6 +9,9 @@ const JobTailor = () => {
     const navigate = useNavigate();
     const [jobTitle, setJobTitle] = useState('');
     const [skills, setSkills] = useState('');
+    const [experience, setExperience] = useState('');
+    const [currentStatus, setCurrentStatus] = useState('');
+    const [education, setEducation] = useState('');
     const [analysis, setAnalysis] = useState(null);
     const [isAnalyzing, setIsAnalyzing] = useState(false);
 
@@ -16,7 +19,7 @@ const JobTailor = () => {
         if (!jobTitle.trim() || !skills.trim()) return;
 
         setIsAnalyzing(true);
-        const result = await simulateJobAnalysis(jobTitle, skills);
+        const result = await simulateJobAnalysis(jobTitle, skills, experience, currentStatus, education);
         setAnalysis(result);
         setIsAnalyzing(false);
     };
@@ -54,6 +57,42 @@ const JobTailor = () => {
                                     placeholder="e.g. Frontend Developer"
                                     value={jobTitle}
                                     onChange={(e) => setJobTitle(e.target.value)}
+                                />
+                            </div>
+                            <div className="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label className="text-sm font-medium text-slate-300 mb-1 block">Years of Exp</label>
+                                    <input
+                                        type="number"
+                                        min="0"
+                                        className="w-full bg-slate-950/50 border border-slate-800 rounded-lg p-3 text-white focus:outline-none focus:ring-1 focus:ring-blue-500"
+                                        placeholder="e.g. 2"
+                                        value={experience}
+                                        onChange={(e) => setExperience(e.target.value)}
+                                    />
+                                </div>
+                                <div>
+                                    <label className="text-sm font-medium text-slate-300 mb-1 block">Status</label>
+                                    <select
+                                        className="w-full bg-slate-950/50 border border-slate-800 rounded-lg p-3 text-white focus:outline-none focus:ring-1 focus:ring-blue-500"
+                                        value={currentStatus}
+                                        onChange={(e) => setCurrentStatus(e.target.value)}
+                                    >
+                                        <option value="">Select...</option>
+                                        <option value="Student">Student</option>
+                                        <option value="Employed">Employed</option>
+                                        <option value="Unemployed">Unemployed</option>
+                                        <option value="Freelancer">Freelancer</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div>
+                                <label className="text-sm font-medium text-slate-300 mb-1 block">Education</label>
+                                <input
+                                    className="w-full bg-slate-950/50 border border-slate-800 rounded-lg p-3 text-white focus:outline-none focus:ring-1 focus:ring-blue-500"
+                                    placeholder="e.g. B.Tech CS, MBA"
+                                    value={education}
+                                    onChange={(e) => setEducation(e.target.value)}
                                 />
                             </div>
                             <div>
@@ -94,7 +133,7 @@ const JobTailor = () => {
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                                 <Card className="bg-slate-900/50 border-slate-800 p-4 flex items-center gap-4">
                                     <div className="h-12 w-12 rounded-full bg-green-500/10 flex items-center justify-center text-green-500 font-bold text-xl">
-                                        {Math.max(0, 100 - (analysis.missingSkills.length * 15))}%
+                                        {analysis.matchScore}%
                                     </div>
                                     <div>
                                         <p className="text-xs text-slate-400 uppercase font-semibold">Match Score</p>
@@ -147,7 +186,7 @@ const JobTailor = () => {
                                                     <li key={idx} className="text-slate-300 text-sm bg-amber-500/5 p-2 rounded border border-amber-500/10">
                                                         <div className="font-semibold text-amber-200 mb-1">{skill}</div>
                                                         <div className="text-xs text-slate-500 flex items-center gap-1">
-                                                            <BookOpen className="h-3 w-3" /> Suggested: Check documentation or build a demo.
+                                                            <BookOpen className="h-3 w-3" /> {skill.resource || "Suggested: Check documentation or build a demo."}
                                                         </div>
                                                     </li>
                                                 ))}
