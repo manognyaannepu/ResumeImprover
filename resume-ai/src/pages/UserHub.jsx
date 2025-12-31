@@ -33,13 +33,23 @@ const UserHub = () => {
                     </p>
                 </div>
 
-                <Button
-                    size="lg"
-                    className="h-16 px-8 text-lg bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-[0_0_40px_-10px_rgba(37,99,235,0.5)] hover:shadow-[0_0_60px_-10px_rgba(37,99,235,0.6)] transition-all duration-300 transform hover:scale-105"
-                    onClick={() => navigate('/templates')}
-                >
-                    <Plus className="mr-2 h-6 w-6" /> Create New Resume
-                </Button>
+                <div className="flex flex-col sm:flex-row gap-4">
+                    <Button
+                        size="lg"
+                        className="h-16 px-8 text-lg bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-[0_0_40px_-10px_rgba(37,99,235,0.5)] hover:shadow-[0_0_60px_-10px_rgba(37,99,235,0.6)] transition-all duration-300 transform hover:scale-105"
+                        onClick={() => navigate('/templates')}
+                    >
+                        <Plus className="mr-2 h-6 w-6" /> Create New Resume
+                    </Button>
+                    <Button
+                        variant="secondary"
+                        size="lg"
+                        className="h-16 px-8 text-lg rounded-full border border-slate-700 hover:bg-slate-800 transition-all duration-300"
+                        onClick={() => navigate('/dashboard')}
+                    >
+                        View My Resumes
+                    </Button>
+                </div>
             </div>
 
             {/* Bottom Content - Scrollable Tips */}

@@ -49,6 +49,13 @@ const Profile = () => {
         setEditForm(prev => ({ ...prev, [field]: value }));
     };
 
+    const handleDeleteAccount = () => {
+        if (window.confirm("Are you sure you want to delete your account? This will erase all your resumes and profile data. This action cannot be undone.")) {
+            localStorage.clear();
+            navigate('/');
+        }
+    };
+
     return (
         <div className="min-h-screen container mx-auto px-4 py-8 animate-in fade-in duration-500">
             {/* Header */}
@@ -268,7 +275,11 @@ const Profile = () => {
                                     <p className="text-red-400 font-medium">Delete Account</p>
                                     <p className="text-slate-500 text-sm">Permanently remove all data</p>
                                 </div>
-                                <Button variant="ghost" className="text-red-400 hover:text-red-300 hover:bg-red-950/30">
+                                <Button
+                                    variant="ghost"
+                                    onClick={handleDeleteAccount}
+                                    className="text-red-400 hover:text-red-300 hover:bg-red-950/30"
+                                >
                                     Delete
                                 </Button>
                             </div>

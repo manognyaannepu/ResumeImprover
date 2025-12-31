@@ -41,6 +41,11 @@ const Layout = () => {
                                         Home
                                     </Button>
                                 </Link>
+                                <Link to="/dashboard">
+                                    <Button variant="ghost" size="sm">
+                                        My Resumes
+                                    </Button>
+                                </Link>
                             </div>
                         </div>
 

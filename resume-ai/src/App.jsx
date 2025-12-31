@@ -11,6 +11,7 @@ import ATSOptimizer from './pages/ATSOptimizer';
 import SkillsAnalyzer from './pages/SkillsAnalyzer';
 import ImpactScorer from './pages/ImpactScorer';
 import Workspace from './pages/Workspace';
+import Dashboard from './pages/Dashboard';
 import Layout from './components/Layout';
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
                 <Route element={<Layout />}>
                     {/* Protected Routes */}
                     <Route path="/hub" element={<UserHub />} />
+                    <Route path="/dashboard" element={<Dashboard />} />
                     <Route path="/profile" element={<Profile />} />
                     <Route path="/settings" element={<Settings />} />
                     <Route path="/text-enhancer" element={<TextEnhancer />} />

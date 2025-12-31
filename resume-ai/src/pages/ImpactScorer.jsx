@@ -4,7 +4,7 @@ import { ArrowLeft, FileText, Upload, CheckCircle2, AlertCircle, BarChart3, Zap 
 import { Button } from '../components/ui/Button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '../components/ui/Card';
 import { simulateImpactScore } from '../services/aiMock';
-import UploadZone from '../components/UploadZone.jsx';
+import UploadZone from '../components/UploadZone';
 
 const ImpactScorer = () => {
     const navigate = useNavigate();
